@@ -16,6 +16,13 @@ lsp_installer.on_server_ready(function(server)
 	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	 end
 
+   if server.name == "erlangls" then
+	 	local erlangls_opts = require("user.lsp.settings.erlangls")
+	 	opts = vim.tbl_deep_extend("force", erlangls_opts, opts)
+    -- opts.cmd = { '/usr/bin/erlang_ls' }
+	 end
+
+
 	 if server.name == "sumneko_lua" then
 	 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
 	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)

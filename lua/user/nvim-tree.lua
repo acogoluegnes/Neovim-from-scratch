@@ -70,7 +70,7 @@ nvim_tree.setup {
   },
   filters = {
     dotfiles = false,
-    custom = {},
+    custom = {"*.beam"},
   },
   git = {
     enable = true,
