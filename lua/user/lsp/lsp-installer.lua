@@ -22,6 +22,11 @@ lsp_installer.on_server_ready(function(server)
     -- opts.cmd = { '/usr/bin/erlang_ls' }
 	 end
 
+   if server.name == "elixirls" then
+	 	local elisir_opts = require("user.lsp.settings.elixirls")
+	 	opts = vim.tbl_deep_extend("force", elisir_opts, opts)
+    -- opts.cmd = { '/usr/bin/erlang_ls' }
+	 end
 
 	 if server.name == "sumneko_lua" then
 	 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
