@@ -92,9 +92,6 @@ local function on_attach(bufnr)
 
 end
 
-require("nvim-tree").setup({
-  on_attach = on_attach,
-})
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 
@@ -134,6 +131,7 @@ end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 nvim_tree.setup {
+  on_attach = on_attach,
   disable_netrw = true,
   hijack_netrw = true,
   open_on_tab = false,
@@ -175,14 +173,14 @@ nvim_tree.setup {
     hide_root_folder = false,
     side = "left",
     adaptive_size = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
+    --[[ mappings = { ]]
+    --[[   custom_only = false, ]]
+    --[[   list = { ]]
+    --[[     { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" }, ]]
+    --[[     { key = "h", cb = tree_cb "close_node" }, ]]
+    --[[     { key = "v", cb = tree_cb "vsplit" }, ]]
+    --[[   }, ]]
+    --[[ }, ]]
     number = false,
     relativenumber = false,
   },
