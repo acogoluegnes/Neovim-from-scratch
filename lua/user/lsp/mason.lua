@@ -3,6 +3,7 @@ local servers = {
 	"jsonls",
     "erlangls",
     "elixirls",
+    "gopls",
 }
 
 local settings = {
